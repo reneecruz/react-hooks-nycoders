@@ -1,23 +1,18 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Container, Button } from "react-bootstrap";
 
-export default class UserForm extends Component {
-  state = {
-    name: "",
-    username: "",
-    email: ""
-  };
+export default function UserForm() {
+ 
+  const [username, setUsername] = useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
 
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
-
-  
-
-  render() {
 
       // const {name, username, email} = this.state
 
@@ -68,7 +63,6 @@ export default class UserForm extends Component {
       
       </Container>
     );
-  }
 }
 
 UserForm.propTypes = {
